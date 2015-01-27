@@ -1,49 +1,48 @@
-<label>Recipe Name
-    <br>
-    <input ng-model="recipe.name">
-</label>
-<br>
-<br>
+<div class="add-recipe-page">
+    <div class="form-group">
+        <label>Recipe Name</label>
+        <input id="recipe-name" class="form-control" ng-model="recipe.name">
+    </div>
 
-<label>Recipe Description
-    <br>
-    <textarea ng-model="recipe.description"></textarea>
-</label>
-<br>
-<br>
+    <div class="form-group">
+        <label>Recipe Description</label>
+        <textarea rows="7" cols="5" class="form-control" ng-model="recipe.description"></textarea>
+    </div>
+    <div class="form-group">
+        <label class="">Recipe Directions</label>
+        <textarea class="form-control" ng-model="recipe.directions"></textarea>
+    </div>
 
-<label>Recipe Directions
-    <br>
-    <textarea ng-model="recipe.directions"></textarea>
-</label>
-<br>
-<br>
+    <div class="form-group">
+        <label class="form-group">Ingredients</label>
+        <input id="ingredient-input" class="form-control" ng-model="ingredientName">
+    </div>
 
-<label>Ingredients
-    <br>
-    <input ng-model="ingredientName">
-</label>
-<br>
-<button ng-click="addIngredientToRecipe(ingredientName)">Add ingredient to recipe</button>
-<br>
+    <button class="btn btn-info btn-sm" ng-click="addIngredientToRecipe(ingredientName)"><span
+            class="glyphicon glyphicon-plus"></span> Add ingredient to recipe
+    </button>
 
-<p>Your ingredients:</p>
-<ol>
-    <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
-</ol>
+    <p>Your ingredients:</p>
+    <ol>
+        <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
+    </ol>
 
-<label>Tags
-    <br>
-    <input ng-model="tagName">
-</label>
-<br>
-<button ng-click="addTagToRecipe(tagName)">Add tag to recipe</button>
-<br>
+    <div class="form-group">
+        <label class="form-group">Tags</label>
+        <input id="tag-input" class="form-control" ng-model="tagName">
+    </div>
 
-<p>Your tags:</p>
-<ol>
-    <li ng-repeat="tag in recipe.tags">{{ tag.name }}</li>
-</ol>
-<br>
+    <button class="btn btn-info btn-sm" ng-click="addTagToRecipe(tagName)"><span
+            class="glyphicon glyphicon-plus"></span> Add tag to recipe
+    </button>
 
-<button ng-click="addRecipe()">Save New Recipe</button>
+    <p>Your tags:</p>
+    <ol>
+        <li ng-repeat="tag in recipe.tags">{{ tag.name }}</li>
+    </ol>
+
+    <button class="btn btn-success btn-md" ng-click="addRecipe()"><span class="glyphicon glyphicon-cloud-upload"></span>
+        Save New Recipe
+    </button>
+
+</div>

@@ -28,3 +28,22 @@
   content: "";
   padding: 0;
 }
+
+.navbar-default {
+    background-color: #3FADFF;
+}
+
+body {
+    background: url(img/Flatfish-lefteyed-flounder.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.contents {
+    background-color: #ffffff;
+    opacity: 0.9;
+    border-radius: 5px;
+    padding: 20px 25px;
+}
