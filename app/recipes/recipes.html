@@ -1,12 +1,10 @@
-<div class="contents">
-    <ul>
-        <li ng-repeat="recipe in recipes">{{ recipe.name }}
-            <ol>
-                <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
-            </ol>
-        </li>
-    </ul>
+<div class="col-sm-6 col-md-4" ng-repeat="recipe in recipes">
+    <div class="recipe-card">
+        <h2>{{recipe.name}}</h2>
+        <img src="{{recipe.photo}}">
 
-
-    <a href="#/add-recipe">Add a New recipe</a>
+        <p>{{recipe.description}}</p>
+    </div>
 </div>
+
+<!--<a href="#/add-recipe">Add a New recipe</a>-->

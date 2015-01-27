@@ -41,9 +41,12 @@ body {
     background-size: cover;
 }
 
-.contents {
+.recipe-card {
     background-color: #ffffff;
-    opacity: 0.9;
     border-radius: 5px;
-    padding: 20px 25px;
+    padding: inherit;
+}
+
+.recipe-card img {
+    max-width: 100%;
 }
