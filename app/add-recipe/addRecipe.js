@@ -11,6 +11,8 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
     .controller('AddRecipeCtrl', ['$scope', 'Restangular', '$location', function ($scope, Restangular, $location) {
         // Initialize an empty recipe object with an empty ingredients and tags list inside.
+
+
         $scope.recipe = {
             ingredients: [],
             tags: []
@@ -21,6 +23,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
             var ingredient = {name: ingredientName};
             $scope.recipe.ingredients.push(ingredient);
             $scope.ingredientName = '';
+
         };
 
         // Add the tags to the recipe object we're building
@@ -28,6 +31,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
             var tag = {name: tagName};
             $scope.recipe.tags.push(tag);
             $scope.tagName = '';
+
         };
 
         // Add a new recipe, alert the user when it's been created or when there was a problem.
