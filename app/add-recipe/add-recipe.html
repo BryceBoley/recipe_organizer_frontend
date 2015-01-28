@@ -24,10 +24,9 @@
         </button>
 
         <p>Your ingredients:</p>
-        <ol>
-            <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
-        </ol>
-
+        <div>
+                <textarea id="ingredbox" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</textarea>
+        </div>
         <div class="form-group">
             <label class="form-group">Tags</label>
             <input id="tag-input" class="form-control" ng-model="tagName">
@@ -38,9 +37,9 @@
         </button>
 
         <p>Your tags:</p>
-        <ol>
-            <li ng-repeat="tag in recipe.tags">{{ tag.name }}</li>
-        </ol>
+        <div>
+            <textarea ng-repeat="tag in recipe.tags">{{ tag.name }}</textarea>
+        </div>
 
         <button class="btn btn-success btn-md" ng-click="addRecipe()"><span class="glyphicon glyphicon-cloud-upload"></span>
             Save New Recipe

@@ -30,7 +30,7 @@
   padding: 0;
 }
 
-.navbar-default {
+.navbar-fixed-top {
     /*background-color: white;*/
 }
 
@@ -54,4 +54,12 @@ body {
 
 #card {
 
+}
+
+body {
+    padding: 50px;
+}
+
+#ingredbox {
+    border-redius: 5px;
 }
