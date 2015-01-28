@@ -52,14 +52,17 @@ body {
     max-width: 100%;
 }
 
-#card {
-
-}
-
 body {
     padding: 50px;
 }
 
 #ingredbox {
-    border-redius: 5px;
+    border-radius: 5px;
 }
+
+.recipeimage {
+    height: 325px;
+    width: 300px;
+    padding: 200px;
+}
+

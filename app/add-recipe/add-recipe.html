@@ -7,11 +7,11 @@
 
         <div class="form-group">
             <label>Recipe Description</label>
-            <textarea rows="7" cols="5" class="form-control" ng-model="recipe.description"></textarea>
+            <input class="form-control" ng-model="recipe.description">
         </div>
         <div class="form-group">
             <label class="">Recipe Directions</label>
-            <textarea class="form-control" ng-model="recipe.directions"></textarea>
+            <input class="form-control" ng-model="recipe.directions">
         </div>
 
         <div class="form-group">
@@ -25,7 +25,7 @@
 
         <p>Your ingredients:</p>
         <div>
-                <textarea id="ingredbox" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</textarea>
+            < id="ingredbox" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</textarea>
         </div>
         <div class="form-group">
             <label class="form-group">Tags</label>
@@ -40,9 +40,5 @@
         <div>
             <textarea ng-repeat="tag in recipe.tags">{{ tag.name }}</textarea>
         </div>
-
-        <button class="btn btn-success btn-md" ng-click="addRecipe()"><span class="glyphicon glyphicon-cloud-upload"></span>
-            Save New Recipe
-        </button>
     </div>
 </div>
