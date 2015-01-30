@@ -1,68 +1,73 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: ;
-  border-bottom: 0.1em solid #000000;
-  margin-bottom: 0;
-  padding: 0 0;
-  background-color: white;
-}
+/*.menu {*/
+  /*list-style: none;*/
+  /*border-bottom: 0.1em solid #000000;*/
+  /*margin-bottom: 0;*/
+  /*padding: 0 0;*/
+  /*background-color: white;*/
+/*}*/
 
-.menu:before {
-  content: "[";
-}
+/*.menu:before {*/
+  /*content: "[";*/
+/*}*/
 
-.menu:after {
-  content: "]";
-}
+/*.menu:after {*/
+  /*content: "]";*/
+/*}*/
 
-.menu > li {
-  display: inline;
-}
+/*.menu > li {*/
+  /*display: inline;*/
+/*}*/
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
+/*.menu > li:before {*/
+  /*content: "|";*/
+  /*padding-right: 0.3em;*/
+/*}*/
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
+/*.menu > li:nth-child(1):before {*/
+  /*content: "";*/
+  /*padding: 0;*/
+/*}*/
 
 .navbar-fixed-top {
     /*background-color: white;*/
 }
 
 body {
-    background: url(img/Flatfish-lefteyed-flounder.jpg) no-repeat center center fixed;
+    background: url(img/foods.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    padding: 50px;
 }
 
 .recipe-card {
     background-color: #ffffff;
     border-radius: 5px;
     padding: inherit;
+
 }
 
 .recipe-card img {
-    max-width: 100%;
+    width: 100%;
 }
 
-body {
-    padding: 50px;
-}
+/*body {*/
+    /*padding: 50px;*/
+/*}*/
 
 #ingredbox {
     border-radius: 5px;
 }
 
-.recipeimage {
-    height: 325px;
-    width: 300px;
-    padding: 200px;
+.img img {
+    background: inherit;
 }
 
+
+.thumbnail {
+    background-image: url(img/linedpaper.png);
+
+}

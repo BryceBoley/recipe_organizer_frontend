@@ -15,6 +15,8 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
 
         Restangular.one('recipes', $scope.recipeId).customGET().then(function (data) {
             $scope.recipe = data;
+
+
         });
 
 

@@ -1,11 +1,30 @@
-<h1>{{ recipe.name }}</h1>
+<!--<form class=form-horizontal">-->
+    <!--<h1>{{ recipe.name }}</h1>-->
 
-<p>{{ recipe.description }}</p>
-<p>{{ recipe.directions }}</p>
+    <!--<p>{{ recipe.description }}</p>-->
+    <!--<p>{{ recipe.directions }}</p>-->
 
-<button class="btn btn-danger" ng-click="deleteRecipe()"><span class="glyphicon glyphicon-trash"></span> Delete Recipe</button>
+    <!--<button class="btn btn-danger" ng-click="deleteRecipe()"><span class="glyphicon glyphicon-trash"></span> Delete Recipe</button>-->
 
 
-<img class ="container recipeimage" src="{{recipe.photo}}">
+    <!--<img class ="container recipeimage" src="{{recipe.photo}}">-->
+<!--</form>-->
 
+<div class="row">
+  <div class="col-sm-6 col-md-8">
+    <div class="thumbnail">
+      <img src="{{recipe.photo}}" class="img-responsive alt="{{ recipe.name }}>
+      <div class="caption">
+        <h2>{{ recipe.name }}</h2>
+        <h4>Recipe Description</h4>
+        <p>{{ recipe.description }}</p>
+        <h4>Ingredients</h4>
+        <p ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</p>
+        <h4>Directions</h4>
+        <p>{{ recipe.directions }}</p>
+        <p><a href="#/recipes" class="btn btn-primary" ng-click="callback()">Back to recipes<a/><a class="btn btn-danger btn-xs pull-right" ng-click="deleteRecipe()">Delete Recipe</a></p>
+     </div>
+    </div>
+  </div>
+</div>
 
