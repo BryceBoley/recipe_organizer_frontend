@@ -71,3 +71,8 @@ body {
     background-image: url(img/linedpaper.png);
 
 }
+
+div .row {
+    padding-top: 125px;
+
+}

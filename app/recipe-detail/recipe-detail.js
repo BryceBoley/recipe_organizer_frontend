@@ -25,12 +25,28 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
 
             if (confirmation) {
                 Restangular.one('recipes', $scope.recipeId).customDELETE().then(function () {
-                        alert('Your recipe was successfully deleted!');
                         $location.path('/recipes');
                     },
                     function () {
                         alert('There was a problem deleting your recipe')
                     })
             }
-        }
+        };
+
+        $scope.editRecipe = function () {
+            Restangular.one('recipes', $scope.recipeId).customPUT($scope.recipe).then(function() {
+                $location.path('/recipes');
+
+                },
+                function () {
+                    alert('There was a problem updating your recipe.')
+                })
+        };
+
+        $scope.cancel = function () {
+            $location.path('/recipes');
+
+
+        };
+
 }]);

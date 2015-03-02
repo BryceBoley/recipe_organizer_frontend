@@ -1,26 +1,41 @@
 <div class="row">
     <div class="col-sm-4 col-md-4">
         <div class="thumbnail">
-          <div class="caption">
-            <h3 align="top">Add Recipe</h3>
-             <div form-group>
-                <label>Recipe Name</label>
-                <input id="recipe-name" class="form-control" ng-model="recipe.name">
-                <label>Recipe Description</label>
-                <textarea class="form-control" ng-model="recipe.description"></textarea>
-                <label class="">Recipe Directions</label>
-                <textarea class="form-control" ng-model="recipe.directions"></textarea>
-                <label class="form-group">Ingredients</label>
-                <p>Your ingredients:</p>
-                <p ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</p>
-                <input id="ingredient-input" class="form-control" ng-model="ingredientName"><button class="btn btn-info btn-xs" ng-click="addIngredientToRecipe(ingredientName)"><span
-                    class="glyphicon glyphicon-plus"></span>Add ingredient</button>
-                <p>Your tags:</p>
-                <p ng-repeat="tag in recipe.tags">{{ tag.name }}</p>
-                <input id="tag-input" class="form-control" ng-model="tagName"><button class="btn btn-info btn-xs" ng-click="addTagToRecipe(tagName)"><span class="glyphicon glyphicon-plus"></span>Add tag</button><br><br>
-                <button class="btn btn-success btn-md" ng-click="addRecipe()"><span class="glyphicon glyphicon-cloud-upload"></span>Save Recipe</button>
-             </div>
-          </div>
+            <div class="caption">
+                <h3 align="top">Add Recipe</h3>
+                <div form-group>
+                    <div>
+                        <label>Name</label>
+                        <br><input id="recipe-name" class="form-control" ng-model="recipe.name"><br>
+                    </div>
+                    <div>
+                        <label>Description</label>
+                        <br><input class="form-control" ng-model="recipe.description"><br>
+                    </div>
+                    <div>
+                        <label class="form-group">Directions</label>
+                        <br><input class="form-control" ng-model="recipe.directions"><br>
+                    </div>
+                    <div>
+                        <label class="form-group">Ingredient</label>
+                        <button class="btn btn-info btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
+                        <span class="glyphicon glyphicon-plus">Add</span></button>
+                        <span ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</span>
+                        <input id="ingredient-input" class="form-control" ng-model="ingredientName"><br>
+                    </div>
+                    <div>
+                        <label class="form-group">Category</label>
+                        <button class="btn btn-info btn-xs pull-right" ng-click="addTagToRecipe(tagName)">
+                        <span class="glyphicon glyphicon-plus"></span>Add</button>
+                        <span ng-repeat="tag in recipe.tags">{{ tag.name }}</span>
+                        <input id="tag-input" class="form-control" ng-model="tagName"><br>
+                    </div>
+                    <div>
+                        <button class="btn btn-info btn-xs" ng-click="addRecipe()"><span class="glyphicon glyphicon-cloud-upload"></span>Save Recipe</button>
+                        <button class="btn btn-info btn-xs pull-right" ng-click="cancel()"><span class="glyphicon glyphicon-cloud-upload"></span>Cancel</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+</div>
