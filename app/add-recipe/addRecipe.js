@@ -9,7 +9,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         });
     }])
 
-    .controller('AddRecipeCtrl', ['$scope', 'Restangular', '$location', function ($scope, Restangular, $location) {
+    .controller('AddRecipeCtrl', ['$scope', 'Restangular', '$location', '$http', function ($scope, Restangular, $location, $http) {
         // Initialize an empty recipe object with an empty ingredients and tags list inside.
 
 
@@ -36,15 +36,36 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
         //Add a new recipe, alert the user when it's been created or when there was a problem.
         $scope.addRecipe = function () {
-            Restangular.all('add-recipe').customPOST($scope.recipe).then(function () {
-                    alert("Your recipe was successfully created");
-                    $location.path('/recipes');
-                },
-                function () {
-                    alert("There was a problem creating your recipe. Please try again.")
-        })};
+            //var boundary = "---------------------------7da24f2e50046";
+            var fd = new FormData();
+            fd.append("photo", $scope.recipe.photo);
+            fd.append("name", $scope.recipe.name);
+            fd.append("description", $scope.recipe.description);
+            fd.append("directions", $scope.recipe.directions);
+            fd.append("ingredients", $scope.recipe.ingredients);
+            fd.append("tags", $scope.recipe.tags);
+
+            console.log(fd);
+
+            $http.post('http://localhost:8002/recipes/', fd, {
+                headers: {'Content-type': undefined },
+                transformRequest: angular.identity
+
+            }).success(function () {
+                $location.path('/recipes');
+            }).error(function (response) {
+                console.log('Error response: ' + response);
+            })};
+
+        $scope.uploadFile = function (files) {
+            $scope.recipe.photo = files[0];
+            console.log($scope.recipe.photo);
+        };
 
         $scope.cancel = function () {
-            $location.path('/recipes');
-        }
-    }]);
+             $location.path('/recipes');
+
+
+        };
+
+        }]);

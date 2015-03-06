@@ -12,17 +12,22 @@
 <!--</ul>-->
 
 
-    <div class="col-sm-4" ng-repeat="recipe in recipes | filter:query | orderBy:orderProp">
-        <div class="recipe-card" style="padding-bottom: 15px;">
-            <h3>{{recipe.name}}</h3>
-            <a href="#/recipes/{{recipe.id}}"><img src="{{recipe.photo}}" alt="no photo"></a>
-        </div>
-    </div>
+    <!--<div class="col-sm-4" ng-repeat="recipe in recipes | filter:query | orderBy:orderProp">-->
+        <!--<div class="recipe-card" style="padding-bottom: 15px;">-->
+            <!--<h3>{{recipe.name}}</h3>-->
+            <!--<a href="#/recipes/{{recipe.id}}"><img src="{{recipe.photo}}" alt="no photo"></a>-->
+        <!--</div>-->
+    <!--</div>-->
 
 
 
-
-
+        <div class="pic col-sm-4" ng-repeat="recipe in recipes | filter:query | orderBy:orderProp">>
+            <a href="#/recipes/{{recipe.id}}"><img src="{{recipe.photo}}" class="pic-image" alt="Pic"/></a>
+		    <span class="pic-caption rotate-in">
+		        <h1 class="pic-title">{{recipe.name}}</h1>
+		        <p>{{recipe.description}}</p>
+		    </span>
+		</div>
 
 
 
