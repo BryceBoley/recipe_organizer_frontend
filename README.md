@@ -1,3 +1,19 @@
+No Clutter: Recipe Organizer
+
+I started this app using the angular-seed, from githib.  Added Django for the backend and sqlite3 for db.  The basic was put together in a group fashion, between around 10 people.  Once the two views were working, the app was mine to do what I could with it in two weeks.  I somehow deleted it the first weekend and broke it several days in a row before I got it functioning and learned how not to brake it.  I eventually got the add and delete functionality and a decent display, then had to move on to the next project.
+
+
+
+
+
+
+
+
+
+
+
+
+
 # angular-seed — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
