@@ -44,13 +44,12 @@
                         <label class="form-group">Directions</label>
                         <br><input class="form-control" ng-model="recipe.directions"><br>
                     </div>
-                    <div><input class="form-control form-inline col-lg-6 ng-pristine ng-valid" id="addIngredientBox" type="text" ng-model="ingredientName" typeahead="ingredient.name for ingredient in ingredients | filter:$viewValue | limitTo:20" placeholder="Add Ingredients" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-010-7480">
-                        <div ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</div>
-                    </div>
                     <div>
+                        <label class="form-group">Ingredient</label>
+                        <button class="btn btn-info btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
+                            <span class="glyphicon glyphicon-plus">Add</span></button>
+                        <br ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}<br>
                         <input id="ingredient-input" class="form-control" ng-model="ingredientName">{{ ingredient.name }}<br>
-                        <button class="btn btn-regular btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
-                            <span class="glyphicon glyphicon-plus">Add</span></button><br>
                     </div><br>
                     <div>
                         <label class="form-group">Category</label><br>
