@@ -6,26 +6,44 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My AngularJS App</title>
-    <meta name="description" content="AngularJS seed app modified for my own purposes">
+    <title>No Clutter: Recipe Organizer</title>
+    <meta name="description" content="No Clutter: Recipe Organizer">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/libs/less-compiled.css">
     <link rel="stylesheet" href="app.css">
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
 <!--<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>-->
-    <nav class="navbar-fixed-top">
+<nav class="nav navbar-fixed-top">
+    <div class="container-fluid navbar-inverse">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/ingredients">No Clutter: Recipe Organizer</a>
+            <ul class="nav navbar-nav">
+                <li><a href="#/recipes">Recipes</a></li>
+                <li><a href="#/add-recipe">Add Recipes</a></li>
+                <li><a href="http//:www.bryceboley.com">contact</a></li>
+            </ul>
+        </div>
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group pull-right">
+                <input type="text" class="form-control" ng-model="query" placeholder="Search">
+            </div>
+        </form>
+    </div>
+</nav>
+    <!--<nav class="navbar-fixed-top">-->
 
-        <a href="#/recipes" class="btn btn-primary btn-md default" role="button">Recipes</a>
-        <a href="#/add-recipe" class="btn btn-primary btn-md default" role="button">Add Recipes</a>
-        <a href="#/ingredients" class="btn btn-primary btn-md default" role="button">Home</a>
-        <a href="http//:www.bryceboley.com" class="btn btn-primary btn-md default" role="button">contact</a>
-        <input ng-model="query">
+        <!--<a href="#/recipes" class="btn btn-primary btn-md default" role="button">Recipes</a>-->
+        <!--<a href="#/add-recipe" class="btn btn-primary btn-md default" role="button">Add Recipes</a>-->
+        <!--<a href="#/ingredients" class="btn btn-primary btn-md default" role="button">Home</a>-->
+        <!--<a href="http//:www.bryceboley.com" class="btn btn-primary btn-md default" role="button">contact</a>-->
+        <!--<input class="query" ng-model="query" placeholder="Search">-->
 
-    </nav>
+    <!--</nav>-->
 
 <!--<a href="#" class="btn btn-primary btn-lg active" role="button">Primary link</a>-->
 <!--<a href="#" class="btn btn-default btn-lg active" role="button">Link</a>-->
@@ -43,6 +61,7 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/lodash/dist/lodash.js"></script>
   <script src="bower_components/restangular/dist/restangular.js"></script>
+  <script src="bower_components/libs/modernizr.js"></script>
   <script src="app.js"></script>
   <script src="recipes/recipes.js"></script>
   <script src="ingredients/ingredients.js"></script>
