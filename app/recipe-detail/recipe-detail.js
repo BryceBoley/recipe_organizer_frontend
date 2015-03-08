@@ -45,7 +45,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
 
             console.log($scope.recipe.id);
 
-            $http.put('http://localhost:8002/recipes/' + $scope.recipe.id, fd, {
+            $http.put('/api/recipes/' + $scope.recipe.id, fd, {
                 headers: {'Content-type': undefined },
                 transformRequest: angular.identity
 
