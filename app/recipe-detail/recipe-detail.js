@@ -24,7 +24,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
             var confirmation = confirm('Are you sure you want to delete this recipe? This cannot be undone');
 
             if (confirmation) {
-                Restangular.one('recipes', $scope.recipeId + '/').customDELETE().then(function () {
+                Restangular.one('recipes', $scope.recipeId).customDELETE().then(function () {
                         $location.path('/recipes');
                     },
                     function () {
