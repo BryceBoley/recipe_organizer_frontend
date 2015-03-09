@@ -14,8 +14,8 @@ angular.module('myApp.recipes', ['ngRoute'])
             $scope.recipes = recipes;
         });
 
-        $scope.convertImageUrl = function (url) {
-            return url.replace(/http:.*media/, '/api/media');
-        };
+        //$scope.convertImageUrl = function (url) {
+        //    return url.replace(/http:.*media/, '/api/media');
+        //};
 
     }]);
