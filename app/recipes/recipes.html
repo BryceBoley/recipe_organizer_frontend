@@ -5,26 +5,29 @@
 <!--</select>-->
 
 
-
-
-    <!--<div class="col-sm-4" ng-repeat="recipe in recipes | filter:query | orderBy:orderProp">-->
-        <!--<div class="recipe-card" style="padding-bottom: 15px;">-->
+        <!--<div class="col-sm-4" ng-repeat="recipe in recipes | filter:query | orderBy:orderProp">-->
+            <!--<div class="recipe-card" style="padding-bottom: 15px;">-->
             <!--<h3 class="recipe-card">{{recipe.name}}</h3>-->
-            <!--<a href="#/recipes/{{recipe.id}}"><img src="{{recipe.photo}}" alt="no photo"></a>-->
+            <!--<a href="#/recipes/{{recipe.id}}"><img class="thumbnail" ng-src="{{recipe.photo}}" alt="no photo"></a>-->
         <!--</div>-->
-    <!--</div>-->
-
-<div class="recipe-pics">
-    <div class="pic" ng-repeat="recipe in recipes | filter:query">
-        <img ng-src="{{(recipe.photo)}}" class="pic-image" alt="Pic"/>
-	    <span class="pic-caption rotate-in">
-	        <h3 class="pic-title">{{recipe.name}}</h3>
-            <h2>{{recipe.description}}</h2>
-            <h2>{{recipe.directions}}</h2><br>
-            <a href="#/recipes/{{recipe.id}}">Details</a>
-        </span>
+     <div class="col-sm-4" ng-repeat="recipe in recipes | filter:query | orderBy:orderProp">
+        <div class="recipe-card" style="padding-bottom: 15px;">
+            <h3>{{recipe.name}}</h3>
+            <a href="#/recipes/{{recipe.id}}"><img src="{{recipe.photo}}" alt="no photo"></a>
+        </div>
     </div>
-</div>
+
+<!--<div class="recipe-pics">-->
+    <!--<div class="pic" ng-repeat="recipe in recipes | filter:query">-->
+        <!--<img ng-src="{{(recipe.photo)}}" class="pic-image" alt="Pic"/>-->
+	    <!--<span class="pic-caption rotate-in">-->
+	        <!--<h3 class="pic-title">{{recipe.name}}</h3>-->
+            <!--<h2>{{recipe.description}}</h2>-->
+            <!--<h2>{{recipe.directions}}</h2><br>-->
+            <!--<a href="#/recipes/{{recipe.id}}">Details</a>-->
+        <!--</span>-->
+    <!--</div>-->
+<!--</div>-->
 
 
 <!--convertImageUrl-->
