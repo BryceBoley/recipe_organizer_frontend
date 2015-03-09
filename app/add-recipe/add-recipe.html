@@ -1,36 +1,32 @@
-<div class="row col-lg-offset-2">
+<div class="row col-sm-offset-3">
     <div class="col-sm-6 col-md-6 col-lg-6">
-        <div class="thumbnail">
-            <div class="caption">
+        <div class="addcard">
+            <div class="background">
                 <h3 align="top">Add Recipe</h3>
-                <div form-group>
-                    <div>
-                        <label>Name</label>
-                        <br><input id="recipe-name" class="form-control" ng-model="recipe.name"><br>
-                    </div>
-                    <div>
-                        <label>Description</label>
-                        <br><input class="form-control" ng-model="recipe.description"><br>
-                    </div>
-                    <div>
-                        <label class="form-group">Directions</label>
-                        <br><input class="form-control" ng-model="recipe.directions"><br>
-                    </div>
-                    <div>
-                        <label class="form-group">Ingredient</label>
+                <div class="form-group">
+                    <div class="cards col-sm-offset-1 col-sm-10">
+                        <input id="recipe-name" class="form-control" placeholder="Name of your recipe" ng-model="recipe.name">
+                    </div><br><br>
+                    <div class="col-sm-offset-1 col-sm-10">
+                        <textarea class="form-control" placeholder="Description of recipe" ng-model="recipe.description"></textarea>
+                    </div><br><br><br>
+                    <div class="col-sm-offset-1 col-sm-10">
+                        <textarea class="form-control" placeholder="Directions to make recipe" ng-model="recipe.directions"></textarea>
+                    </div><br><br>
+                    <div class="col-sm-offset-1 col-sm-10">
                         <button class="btn btn-info btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
                             <span class="glyphicon glyphicon-plus">Add</span></button>
                         <span ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</span>
-                        <input id="ingredient-input" class="form-control" ng-model="ingredientName"><br>
+                        <input id="ingredient-input" class="form-control" placeholder="Ingredients" ng-model="ingredientName">
                     </div>
-                    <div>
-                        <label class="form-group">Category</label>
+                    <div  class="col-sm-offset-1 col-sm-10">
                         <button class="btn btn-info btn-xs pull-right" ng-click="addTagToRecipe(tagName)">
                             <span class="glyphicon glyphicon-plus"></span>Add</button>
-                        <span ng-repeat="tag in recipe.tags">{{ tag.name }}</span>+
-                        <input id="tag-input" class="form-control" ng-model="tagName"><br>
-                        <div>
-                            <input type="file" ng-model="onchange" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+                        <span ng-repeat="tag in recipe.tags">{{ tag.name }}</span>
+                        <input id="tag-input" class="form-control col-md-6" placeholder="Tag for searching" ng-model="tagName">
+                    </div><br>
+                    <div>
+                        <input type="file" ng-model="onchange" onchange="angular.element(this).scope().uploadFile(this.files)"/>
                     </div><br>
                     <div>
                         <button class="btn btn-info btn-xs" ng-click="addRecipe()"><span class="glyphicon glyphicon-cloud-upload"></span>Save Recipe</button>
