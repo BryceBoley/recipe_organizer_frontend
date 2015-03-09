@@ -64,3 +64,9 @@ div .row {
 .button-margin {
     margin: 0 25px;
 }
+
+.align {
+    color: #03771e;
+    text-shadow: 5px 5px 5px #ff0000;
+    background-color: white;
+}
