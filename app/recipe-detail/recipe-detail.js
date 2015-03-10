@@ -39,7 +39,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
             fd.append("ingredients", $scope.recipe.ingredients);
             fd.append("tags", $scope.recipe.tags);
 
-            $http.put('/api/recipes/' + $scope.recipe.id, fd, {
+            $http.put('/recipes/' + $scope.recipe.id, fd, {
                 headers: {'Content-type': undefined },
                 transformRequest: angular.identity
 
