@@ -1,9 +1,11 @@
+
+
 <div class="row col-sm-offset-3">
     <div class="col-sm-6 col-md-6 col-lg-6">
         <div class="addcard">
             <div class="background">
                 <h3 align="top">Add Recipe</h3>
-                <div class="form-group"><br>
+                <form class="form-group">
                     <div class="cards col-sm-offset-1 col-sm-10">
                         <input id="recipe-name" class="form-control" placeholder="Name of your recipe" ng-model="recipe.name">
                     </div><br><br><br>
@@ -19,28 +21,23 @@
                         <span ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</span>
                         <input id="ingredient-input" class="form-control" placeholder="Ingredients" ng-model="ingredientName">
                     </div><br><br><br>
-                    <div  class="col-sm-offset-1 col-sm-10">
+                    <div>
+                        <label class="form-group">Category</label><br>
                         <button class="btn btn-info btn-xs pull-right" ng-click="addTagToRecipe(tagName)">
                             <span class="glyphicon glyphicon-plus"></span>Add</button>
-                        <span ng-repeat="tag in recipe.tags">{{ tag.name }}</span>
-                        <input id="tag-input" class="form-control col-md-6" placeholder="Tag for searching" ng-model="tagName">
-                    </div><br><br><br>
-                    <div><br>
-                        <input type="file" ng-model="onchange" onchange="angular.element(this).scope().uploadFile(this.files)"/>
-                    </div><br>
-                    <div>
-                        <button class="btn btn-info btn-xs" ng-click="editRecipe()">
-                            <span class="glyphicon glyphicon-cloud-upload"></span>Save Recipe</button>
-                        <button class="btn btn-danger btn-xs pull-right" ng-click="deleteRecipe()">Delete Recipe</button>
-                        <button class="btn btn-info btn-xs" ng-click="cancel()">
-                            <span class="glyphicon glyphicon-cloud-upload"></span>Cancel</button>
+                        <div ng-repeat="tag in recipe.tags">{{ tag.name }}</div>
+                        <input id="tag-input" class="form-control" ng-model="tagName">
+                        <div>
+                            <input type="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+                        </div><br>
                     </div>
-                </div>
+                    <div>
+                        <button class="btn btn-info btn-xs" ng-click="editRecipe()"><span class="glyphicon glyphicon-cloud-upload"></span>Edit Recipe</button><br>
+                        <button class="btn btn-info btn-xs" ng-click="cancel()"><span class="glyphicon glyphicon-cloud-upload"></span>Cancel</button><br>
+                        <button class="btn btn-danger btn-xs" ng-click="deleteRecipe()">Delete Recipe</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
