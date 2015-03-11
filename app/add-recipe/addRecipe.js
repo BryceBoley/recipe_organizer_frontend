@@ -62,10 +62,13 @@ angular.module('myApp.addRecipe', ['ngRoute'])
             console.log($scope.recipe.photo);
         };
 
+        $scope.convertImageUrl = function (url) {
+            return url.replace(/http:.*media/, '/api/media');
+        };
+
         $scope.cancel = function () {
              $location.path('/recipes');
 
-
         };
 
-        }]);
+    }]);
