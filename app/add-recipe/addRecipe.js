@@ -57,6 +57,10 @@ angular.module('myApp.addRecipe', ['ngRoute'])
                 console.log('Error response: ' + response);
             })};
 
+        $scope.uploadFile = function(that) {
+            angular.element(that).scope().uploadFile(that).$digest()
+        }
+
         $scope.uploadFile = function (files) {
             $scope.recipe.photo = files[0];
             console.log($scope.recipe.photo);
