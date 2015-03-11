@@ -1,6 +1,6 @@
 
 
-<div class="row col-sm-offset-3">
+<div class="ng-scope row col-sm-offset-3">
     <div class="col-sm-6 col-md-6 col-lg-6">
         <div class="addcard">
             <div class="background">
@@ -29,7 +29,7 @@
                         <input id="tag-input" class="form-control" ng-model="tagName">
                         <div>
                             <input ng-model="photo" type="file" accept="image/*" onchange="angular.element(this).scope().uploadFile(this.files)"/>
-                            <img ng-src="{{convertImageUrl(recipe.photo)}}" class="pic-image" alt="Pic">
+                            <img ng-src="convertImageUrl(onchange)" class="pic-image" alt="Pic">
                         </div><br>
                     </div>
                     <div>
