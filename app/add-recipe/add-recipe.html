@@ -28,7 +28,7 @@
                         <input id="tag-input" class="form-control col-md-6" placeholder="Tag for searching" ng-model="tagName">
                     </div><br><br><br>
                     <div><br>
-                        <input ng-model="photo" type="file" accept="image/*" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+                        <input ng-model="photo" type="file" accept="image/*" onchange="angular.element(this).scope().$digest().uploadFile(this.files)"/>
                     </div><br>
                     <div>
                         <button class="btn btn-info btn-xs" ng-click="addRecipe()">
@@ -43,3 +43,14 @@
 </div>
 
 
+<div ng-app="app">
+    <div ng-controller="AppController">
+        <input type="file" nv-file-select uploader="uploader"/><br/>
+        <ul>
+            <li ng-repeat="item in uploader.queue">
+                Name: <span ng-bind="item.file.name"></span><br/>
+                <button ng-click="item.upload()">upload</button>
+            </li>
+        </ul>
+    </div>
+</div>
