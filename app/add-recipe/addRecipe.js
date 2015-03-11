@@ -47,7 +47,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
             console.log(fd);
 
-            $http.post('/recipes/', fd, {
+            $http.post('/api/recipes/', fd, {
                 //headers: {'Content-type': 'multipart/form-data; boundary'},
                 transformRequest: angular.identity
 
