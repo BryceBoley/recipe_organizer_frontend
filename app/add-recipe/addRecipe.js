@@ -39,7 +39,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
             var data = new FormData();
             angular.forEach(item, function (fieldData, field) {
                 data.append(field, fieldData);
-        });
+        })};
 
         $scope.addRecipe = function () {
             Restangular.all('recipes/').withHttpConfig({transformRequest: angular.identity})
