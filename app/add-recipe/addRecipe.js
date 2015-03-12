@@ -43,12 +43,11 @@ angular.module('myApp.addRecipe', ['ngRoute'])
                 fd.append("directions", $scope.recipe.directions);
                 fd.append("ingredients", $scope.recipe.ingredients);
                 fd.append("tags", $scope.recipe.tags);
-                fd.append(field, fieldData);
                 console.log('fd')
             });
 
             Restangular.all('recipes').withHttpConfig({transformRequest: angular.identity})
-                .post(fd, {}, {'Content-Type': form-data }).then(function () {
+                .post(fd, {}, {'Content-Type': undefined }).then(function () {
                     }).success(function () {
                         $location.path('/recipes');
                     }).error(function (response) {
