@@ -42,7 +42,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
             });
 
             Restangular.all('recipes').withHttpConfig({transformRequest: angular.identity})
-                .post(data, {}, {'Content-Type': multipart/form-data }).then(function () {
+                .post(data, {}, {'Content-Type': undefined }).then(function () {
                     }).success(function () {
                         $location.path('/recipes');
                     }).error(function (response) {
