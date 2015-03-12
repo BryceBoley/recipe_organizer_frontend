@@ -34,6 +34,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
         };
 
+        @ensure_csrf_cookie
         $scope.addRecipe = function () {
             Restangular.all('recipes/', $scope.recipe).customPOST().then(function () {
                 $location.path('/recipes');
