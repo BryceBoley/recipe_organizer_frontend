@@ -37,12 +37,12 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         $scope.addRecipe = function (recipe) {
             var data = new FormData();
             angular.forEach($scope.recipe.photo, function (fieldData, field){
-                data.append("field", fieldData);
+                data.append(field, fieldData);
             console.log('data')
             });
 
             Restangular.all('recipes').withHttpConfig({transformRequest: angular.identity})
-                .post(data, {}, {'Content-Type': undefined }).then(function () {
+                .post(data, {}, {'Content-Type': form-data }).then(function () {
                     }).success(function () {
                         $location.path('/recipes');
                     }).error(function (response) {
