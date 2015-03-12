@@ -34,11 +34,17 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
         };
 
-        $scope.addRecipe = function (recipe) {
-            var data = new FormData();
-            angular.forEach($scope.recipe.photo, function (fieldData, field){
-                data.append(field, fieldData);
-            console.log('data')
+        $scope.addRecipe = function () {
+              var fd = new FormData();
+            fd("photo", $scope.recipe.photo);
+            fd("name", $scope.recipe.name);
+            fd("description", $scope.recipe.description);
+            fd("directions", $scope.recipe.directions);
+            fd("ingredients", $scope.recipe.ingredients);
+            fd("tags", $scope.recipe.tags);
+            angular.forEach($scope.recipe, function (fieldData, field){
+                fd.append(field, fieldData);
+            console.log('fd')
             });
 
             Restangular.all('recipes').withHttpConfig({transformRequest: angular.identity})
@@ -56,11 +62,11 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         //    var boundary = "---------------------------7da24f2e50046";
         //    var fd = new FormData();
         //    fd.append("photo", $scope.recipe.photo);
-    //        fd.append("name", $scope.recipe.name);
-    //        fd.append("description", $scope.recipe.description);
-    //        fd.append("directions", $scope.recipe.directions);
-    //        fd.append("ingredients", $scope.recipe.ingredients);
-    //        fd.append("tags", $scope.recipe.tags);
+        //    fd.append("name", $scope.recipe.name);
+        //    fd.append("description", $scope.recipe.description);
+        //    fd.append("directions", $scope.recipe.directions);
+        //    fd.append("ingredients", $scope.recipe.ingredients);
+        //    fd.append("tags", $scope.recipe.tags);
     //
     //        console.log(fd);
     //
