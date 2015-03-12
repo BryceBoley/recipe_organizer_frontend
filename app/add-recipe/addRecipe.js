@@ -34,13 +34,16 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
         };
 
-
         $scope.addRecipe = function () {
-            Restangular.all('recipes/').customPOST($scope.recipe).then(function () {
+            Restangular.all('recipes/').withHttpConfig({transformRequest: angular.identity})
+                .customPOST($scope.recipe, {}, {'Content-Type': undefined}).then(function () {
                     alert("Your recipe was successfully created");
-                    $location.path('/recipes');
-            })}
+                    $location.path('/recipes')
+                    .error(function (response) {
+                  console.log('Error response: ' + response);
+            })})
 
+        };
         ////Add a new recipe, alert the user when it's been created or when there was a problem.
         //$scope.addRecipe = function () {
         //    var boundary = "---------------------------7da24f2e50046";
@@ -65,15 +68,15 @@ angular.module('myApp.addRecipe', ['ngRoute'])
     //        })};
     //
     //
-    //    $scope.uploadFile = function (files) {
-    //        $scope.recipe.photo = files[0];
-    //        console.log($scope.recipe.photo);
-    //    };
-    //
-    //    $scope.convertImageUrl = function (url) {
-    //        return url.replace(/http:.*media/, '/api/media');
-    //
-    //    };
+        $scope.uploadFile = function (files) {
+            $scope.recipe.photo = files[0];
+            console.log($scope.recipe.photo);
+        };
+
+        $scope.convertImageUrl = function (url) {
+            return url.replace(/http:.*media/, '/api/media');
+
+        };
 
         $scope.cancel = function () {
              $location.path('/recipes');
