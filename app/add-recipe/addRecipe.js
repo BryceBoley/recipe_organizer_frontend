@@ -36,7 +36,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
         $scope.addRecipe = function () {
 
-                Restangular.all('recipes/', $scope.recipeId).customPOST(data).then(function () {
+                Restangular.all('recipes/', $scope.recipe).customPOST(data).then(function () {
                     $location.path('/recipes');
 
                 });
