@@ -34,13 +34,20 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
         };
 
+        $scope.saveNew = function (item) {
+
+            var data = new FormData();
+            angular.forEach(item, function (fieldData, field) {
+                data.append(field, fieldData);
+        });
+
         $scope.addRecipe = function () {
             Restangular.all('recipes/').withHttpConfig({transformRequest: angular.identity})
                 .customPOST($scope.recipe, {}, {'Content-Type': undefined}).then(function () {
                     alert("Your recipe was successfully created");
                     $location.path('/recipes')
                     .error(function (response) {
-                  console.log('Error response: ' + response);
+                        console.log('Error response: ' + response);
             })})
 
         };
