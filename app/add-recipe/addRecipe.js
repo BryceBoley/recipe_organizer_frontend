@@ -13,7 +13,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         // Initialize an empty recipe object with an empty ingredients and tags list inside.
 
 
-        $scope.recipe = {git stat
+        $scope.recipe = {
             ingredients: [],
             tags: []
         };
