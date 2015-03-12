@@ -37,18 +37,19 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         $scope.addRecipe = function (recipe) {
             var data = new FormData();
             angular.forEach($scope.recipe.photo, function (fieldData, field){
-                data.append("recipe", $scope.recipe.photo);
-            },
-
+                data.append("field", fieldData);
+            console.log('data')
+            });
 
             Restangular.all('recipes').withHttpConfig({transformRequest: angular.identity})
-                .customPOST($scope.recipe, {}, {'Content-Type': undefined}).then(function () {
-                    alert("Your recipe was successfully created");
-                    $location.path('/recipes')
-                    .error(function (response) {
+                .post(data, {}, {'Content-Type': undefined}).then(function () {
+                    }).success(function () {
+                        $location.path('/recipes');
+                    }).error(function (response) {
                         console.log('Error response: ' + response);
-            })}))
+            })
         };
+
 
         ////Add a new recipe, alert the user when it's been created or when there was a problem.
         //$scope.addRecipe = function () {
