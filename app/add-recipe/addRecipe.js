@@ -35,11 +35,10 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         };
 
         $scope.addRecipe = function () {
+            Restangular.all('recipes', $scope.recipe).customPOST().then(function () {
+                $location.path('/recipes');
 
-                Restangular.all('recipes/', $scope.recipe).customPOST().then(function () {
-                    $location.path('/recipes');
-
-                });
+            });
 
         };
 
