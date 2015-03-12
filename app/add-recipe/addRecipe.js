@@ -13,7 +13,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         // Initialize an empty recipe object with an empty ingredients and tags list inside.
 
 
-        $scope.recipe = {
+        $scope.recipe = {git stat
             ingredients: [],
             tags: []
         };
@@ -36,12 +36,10 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
 
         $scope.addRecipe = function () {
-            Restangular.all('recipes/', $scope.recipe).customPOST().then(function () {
-                $location.path('/recipes');
-
-            });
-
-        };
+            Restangular.all('recipes/').customPOST($scope.recipe).then(function () {
+                    alert("Your recipe was successfully created");
+                    $location.path('/recipes');
+            })},
 
         //Add a new recipe, alert the user when it's been created or when there was a problem.
     //    $scope.addRecipe = function () {
