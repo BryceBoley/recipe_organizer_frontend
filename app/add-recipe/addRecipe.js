@@ -35,7 +35,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         };
 
         $scope.addRecipe = function () {
-            Restangular.all('recipes', $scope.recipe).customPOST().then(function () {
+            Restangular.all('recipes/', $scope.recipe).customPOST().then(function () {
                 $location.path('/recipes');
 
             });
@@ -55,7 +55,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
     //
     //        console.log(fd);
     //
-    //        $http.post('#/recipes', fd, {
+    //        $http.post('/recipes/', fd, {
     //            headers: {'Content-type': 'multipart/form-data; boundary'},
     //            transformRequest: angular.identity
     //
