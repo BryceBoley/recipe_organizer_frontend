@@ -41,7 +41,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
             },
 
 
-            Restangular.all('recipes/').withHttpConfig({transformRequest: angular.identity})
+            Restangular.all('recipes').withHttpConfig({transformRequest: angular.identity})
                 .customPOST($scope.recipe, {}, {'Content-Type': undefined}).then(function () {
                     alert("Your recipe was successfully created");
                     $location.path('/recipes')
