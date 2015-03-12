@@ -54,7 +54,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
     //
             console.log(fd);
 
-            $http.post('/recipes/', fd, {
+            $http.post('/recipes', fd, {
                 headers: {'Content-type': 'image/jpeg'},
                 transformRequest: angular.identity
 
