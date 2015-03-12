@@ -58,13 +58,13 @@ angular.module('myApp.addRecipe', ['ngRoute'])
             })};
 
         $scope.uploadFile = function(that) {
-            angular.element(that).scope().uploadFile(that).$digest()
-        }
-
-        $scope.uploadFile = function (files) {
-            $scope.recipe.photo = files[0];
-            console.log($scope.recipe.photo);
+            $scope.onchange=angular.element(that).$digest().uploadFile(that)
         };
+
+        //$scope.uploadFile = function (files) {
+        //    $scope.recipe.photo = files[0];
+        //    console.log($scope.recipe.photo);
+        //};
 
         $scope.convertImageUrl = function (url) {
             return url.replace(/http:.*media/, '/api/media');
