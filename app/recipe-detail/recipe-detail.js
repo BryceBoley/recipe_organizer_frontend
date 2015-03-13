@@ -17,9 +17,9 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
             $scope.recipe = data;
         });
 
-        $scope.convertImageUrl = function (url) {
-            return url.replace(/http:.*media/, '/api/media');
-        };
+        //$scope.convertImageUrl = function (url) {
+        //    return url.replace(/http:.*media/, '/api/media');
+        //};
 
         $scope.deleteRecipe = function () {
             var confirmation = confirm('Are you sure you want to delete this recipe? This cannot be undone');
@@ -43,7 +43,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
             fd.append("ingredients", $scope.recipe.ingredients);
             fd.append("tags", $scope.recipe.tags);
 
-            $http.put('/recipes/' + $scope.recipe.id, fd, {
+            $http.put('http://localhost:8002/recipes/' + $scope.recipe.id, fd, {
                 headers: {'Content-type': undefined },
                 transformRequest: angular.identity
 
@@ -56,10 +56,10 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
         $scope.uploadFile = function (files) {
             $scope.recipe.photo = files[0];
         };
-
-        $scope.convertImageUrl = function (url) {
-            return url.replace(/http:.*media/, '/api/media');
-        };
+        //
+        //$scope.convertImageUrl = function (url) {
+        //    return url.replace(/http:.*media/, '/api/media');
+        //};
 
         $scope.cancel = function () {
             $location.path('/recipes');

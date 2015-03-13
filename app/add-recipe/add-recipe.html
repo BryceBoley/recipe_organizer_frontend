@@ -16,13 +16,13 @@
                         <textarea class="form-control" placeholder="Directions to make recipe" ng-model="recipe.directions"></textarea>
                     </div><br><br><br>
                     <div class="col-sm-offset-1 col-sm-10">
-                        <button class="btn btn-info btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
+                        <button class="btn btn-regular btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
                             <span class="glyphicon glyphicon-plus">Add</span></button>
                         <span ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</span>
                         <input id="ingredient-input" class="form-control" placeholder="Ingredients" ng-model="ingredientName">
                     </div><br><br><br>
                     <div  class="col-sm-offset-1 col-sm-10">
-                        <button class="btn btn-info btn-xs pull-right" ng-click="addTagToRecipe(tagName)">
+                        <button class="btn btn-regular btn-xs pull-right" ng-click="addTagToRecipe(tagName)">
                             <span class="glyphicon glyphicon-plus"></span>Add</button>
                         <span ng-repeat="tag in recipe.tags">{{ recipe.tag.name }}</span>
                         <input id="tag-input" class="form-control col-md-6" placeholder="Tag for searching" ng-model="tagName">
@@ -31,9 +31,9 @@
                         <input ng-model="photo" type="file" accept="image/*" onchange="angular.element(this).scope().uploadFile(this.files)"/>
                     </div><br>
                     <div>
-                        <button class="btn btn-info btn-xs" ng-click="addRecipe()">
+                        <button class="btn btn-regular btn-xs" ng-click="addRecipe()">
                             <span class="glyphicon glyphicon-cloud-upload"></span>Save Recipe</button>
-                        <button class="btn btn-info btn-xs pull-right" ng-click="cancel()">
+                        <button class="btn btn-rergular btn-xs pull-right" ng-click="cancel()">
                             <span class="glyphicon glyphicon-cloud-upload"></span>Cancel</button>
                     </div>
                 </div>
