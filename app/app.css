@@ -70,3 +70,11 @@ div .row {
     text-shadow: 5px 5px 5px #ff0000;
     background-color: white;
 }
+
+. appname {
+    position: relative;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    color: #777;
+    text-align: center;
+}
