@@ -18,36 +18,55 @@
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-<!--<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>-->
-<nav class="nav navbar-fixed-top">
-    <div class="container-fluid navbar-inverse">
+
+
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <div class="container topnav">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#/ingredients">No Clutter: Recipe Organizer</a>
-            <ul class="nav navbar-nav">
-                <li><a href="#/recipes">Recipes</a></li>
-                <li><a href="#/add-recipe">Add Recipes</a></li>
-                <li><a href="http://bryceboley.com">contact</a></li>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <h5>No Clutter</h5>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#/recipes">Recipes</a>
+                </li>
+                <li>
+                    <a href="#/add-recipe">Add Recipes</a>
+                </li>
+                <li>
+                    <a href="http://bryceboley.com/contact">contact</a>
+                </li>
             </ul>
         </div>
-        <form class="navbar-form navbar-left" role="search">
-            <div class="form-group pull-right">
-                <input type="text" class="form-control" ng-model="query" placeholder="Search">
-            </div>
-        </form>
     </div>
 </nav>
-    <!--<nav class="navbar-fixed-top">-->
 
-        <!--<a href="#/recipes" class="btn btn-primary btn-md default" role="button">Recipes</a>-->
-        <!--<a href="#/add-recipe" class="btn btn-primary btn-md default" role="button">Add Recipes</a>-->
-        <!--<a href="#/ingredients" class="btn btn-primary btn-md default" role="button">Home</a>-->
-        <!--<a href="http//:www.bryceboley.com" class="btn btn-primary btn-md default" role="button">contact</a>-->
-        <!--<input class="query" ng-model="query" placeholder="Search">-->
 
-    <!--</nav>-->
 
-<!--<a href="#" class="btn btn-primary btn-lg active" role="button">Primary link</a>-->
-<!--<a href="#" class="btn btn-default btn-lg active" role="button">Link</a>-->
+
+<!--<nav class="nav navbar-fixed-top">-->
+    <!--<div class="container-fluid navbar-inverse">-->
+        <!--<div class="navbar-header">-->
+            <!--<a class="navbar-brand" href="#/ingredients">No Clutter: Recipe Organizer</a>-->
+            <!--<ul class="nav navbar-nav">-->
+                <!--<li><a href="#/recipes">Recipes</a></li>-->
+                <!--<li><a href="#/add-recipe">Add Recipes</a></li>-->
+                <!--<li><a href="http://bryceboley.com">contact</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--<form class="navbar-form navbar-left" role="search">-->
+            <!--<div class="form-group pull-right">-->
+                <!--<input type="text" class="form-control" ng-model="query" placeholder="Search">-->
+            <!--</div>-->
+        <!--</form>-->
+    <!--</div>-->
+<!--</nav>-->
 
 
 
@@ -55,10 +74,9 @@
         <div ng-view></div>
     </div>
 
-  <!-- In production use:
+  <!--&lt;!&ndash; In production use:-->
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
+  <!--<script src="bower_components/angular/angular.js"></script>-->
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/lodash/dist/lodash.js"></script>
   <script src="bower_components/restangular/dist/restangular.js"></script>
