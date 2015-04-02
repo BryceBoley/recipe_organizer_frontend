@@ -1,10 +1,13 @@
 .query {
     -webkit-text-emphasis-color: #292929;
 }
-.navbar-fixed-top {
+nav {
     background-color: white;
     color: #405264;
     opacity: 0.9;
+    text-align: center;
+    position: relative;padding-bottom: 5px;
+    padding-top: 5px;
 }
 .search {
     horiz-align: right;
@@ -69,12 +72,4 @@ div .row {
     color: #03771e;
     text-shadow: 5px 5px 5px #ff0000;
     background-color: white;
-}
-
-. appname {
-    position: relative;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    color: #777;
-    text-align: center;
 }
