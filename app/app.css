@@ -2,7 +2,6 @@
     -webkit-text-emphasis-color: #292929;
 }
 .navbar-fixed-top {
-    background-color: white;
     color: #405264;
     opacity: 0.9;
 }
@@ -46,27 +45,26 @@ body {
 #ingredbox {
     border-radius: 5px;
 }
-
-/*.img img {*/
-    /*background: inherit;*/
-/*}*/
-
-
 .background {
     background-image: url(img/lined_paper.png);
-
 }
-
 div .row {
     padding-top: 125px;
-
 }
 .button-margin {
     margin: 0 25px;
 }
-
 .align {
     color: #03771e;
     text-shadow: 5px 5px 5px #ff0000;
     background-color: white;
+}
+.input-group {
+    margin-top: 11px;
+    horiz-align: right;
+    text-align: center;
+    padding: 2px;
+}
+.navbar-brand {
+   width: 33%;
 }

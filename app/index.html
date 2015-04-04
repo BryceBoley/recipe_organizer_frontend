@@ -14,28 +14,54 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="img/less-compiled.css">
     <link rel="stylesheet" href="app.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="img/modernizr.js"></script>
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-<!--<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>-->
-<nav class="nav navbar-fixed-top">
+
+<!--<nav class="nav navbar-fixed-top">-->
+    <!--<div class="container-fluid navbar-inverse">-->
+        <!--<div class="navbar-header">-->
+            <!--<a class="navbar-brand" href="#/ingredients">No Clutter</a>-->
+            <!--<ul class="nav navbar-nav">-->
+                <!--<li class="dropdown">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown">Options<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="#/recipes">Recipes</a></li>-->
+                        <!--<li><a href="#/add-recipe">Add Recipe</a></li>-->
+                        <!--<li><a href="http://bryceboley.com">Contact</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li><input type="text" size="12" class="form-control" ng-model="query" placeholder="Search"></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+
+<nav class="navbar navbar-fixed-top">
     <div class="container-fluid navbar-inverse">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#/ingredients">No Clutter: Recipe Organizer</a>
-            <ul class="nav navbar-nav">
-                <li><a href="#/recipes">Recipes</a></li>
-                <li><a href="#/add-recipe">Add Recipes</a></li>
-                <li><a href="recipes">contact</a></li>
-            </ul>
-        </div>
-        <form class="navbar-form navbar-left" role="search">
-            <div class="form-group pull-right">
-                <input type="text" class="form-control" ng-model="query" placeholder="Search">
+        <a class="navbar-brand" href="#/ingredients">No Clutter</a>
+        <div class="navbar-brand">
+            <div class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">Options<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#/recipes">Recipes</a></li>
+                    <li><a href="#/add-recipe">Add Recipe</a></li>
+                    <li><a href="http://bryceboley.com">Contact</a></li>
+                </ul>
             </div>
-        </form>
+        </div>
+        <a class=navbar-brand"><input type="text" size="8" class="input-group" ng-model="query" placeholder="Search"></a>
+        <!--<a class="navbar-brand" href="#/recipes">Recipes</a>-->
+        <!--<a class="navbar-brand" href="#/add-recipe">Add Recipe</a>-->
+        <!--<a class="navbar-brand" href="http://bryceboley.com">Contact</a>-->
+        <!--<a class="navbar-brand"><input type="text" size="8" class="input-group" ng-model="query" placeholder="Search"></a>-->
+
     </div>
 </nav>
+
     <!--<nav class="navbar-fixed-top">-->
 
         <!--<a href="#/recipes" class="btn btn-primary btn-md default" role="button">Recipes</a>-->
