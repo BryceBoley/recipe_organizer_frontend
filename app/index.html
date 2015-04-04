@@ -14,64 +14,50 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="img/less-compiled.css">
     <link rel="stylesheet" href="app.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="img/modernizr.js"></script>
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
 
 
-<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-    <div class="container topnav">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <h2 class="appname">No Clutter</h2>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#/recipes">Recipes</a>
-                </li>
-                <li>
-                    <a href="#/add-recipe">Add Recipes</a>
-                </li>
-                <li>
-                    <a href="http://bryceboley.com">contact</a>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left" role="search">
-            <div class="form-group pull-right">
-                <input type="text" class="form-control" ng-model="query" placeholder="Search">
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid navbar-inverse">
+        <a class="navbar-brand" href="#/ingredients">No Clutter</a>
+        <div class="navbar-brand">
+            <div class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">Options<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#/recipes">Recipes</a></li>
+                    <li><a href="#/add-recipe">Add Recipe</a></li>
+                    <li><a href="http://bryceboley.com">Contact</a></li>
+                </ul>
             </div>
-        </form>
         </div>
+        <a class=navbar-brand"><input type="text" size="8" class="input-group" ng-model="query" placeholder="Search"></a>
     </div>
 </nav>
 
 
-    <div class="container-fluid">
-        <div ng-view></div>
-    </div>
+<div class="container-fluid">
+    <div ng-view></div>
+</div>
 
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>-->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/lodash/dist/lodash.js"></script>
-  <script src="bower_components/restangular/dist/restangular.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="app.js"></script>
-  <script src="recipes/recipes.js"></script>
-  <script src="ingredients/ingredients.js"></script>
-  <script src="add-recipe/addRecipe.js"></script>
-  <script src="recipe-detail/recipe-detail.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/lodash/dist/lodash.js"></script>
+<script src="bower_components/restangular/dist/restangular.js"></script>
+<script src="app.js"></script>
+<script src="recipes/recipes.js"></script>
+<script src="ingredients/ingredients.js"></script>
+<script src="add-recipe/addRecipe.js"></script>
+<script src="recipe-detail/recipe-detail.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
 </body>
 </html>
