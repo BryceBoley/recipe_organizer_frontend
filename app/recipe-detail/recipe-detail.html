@@ -1,31 +1,32 @@
-
 <div class="row col-sm-offset-4">
-    <div class="col-sm-8 col-md-6 col-lg-4">
-        <div class="addcard">
-            <div class="background">
-                <div class="col-sm-offset-1"><br>
-                    <h1 class="nested">{{ recipe.name }}</h1><br>
-                    <p class="nested">Ingredients:</p>
-                    <ul ng-repeat="ingredient in recipe.ingredients">
-                        <li class="nested col-sm-offset-1">{{ ingredient.name }}<br></li>
-                    </ul><br>
-                    <ul>
-                        <li class="nested">{{ recipe.directions }}</li><br>
-                    </ul>
-                </div>
+    <div class="col-sm-8 col-md-6 col-lg-6">
+        <div class="thumbnail">
+            <img src="{{recipe.photo}}" class="img-responsive" alt="recipe.name">
+            <div class="caption">
+                <h2 class="nested col-sm-offset-1">{{ recipe.name }}</h2>
+                <h4>Ingredients:</h4>
+                <p class="nested col-sm-offset-1" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</p>
+                <h4>Directions:</h4>
+                <p class="nested col-sm-offset-1" ng-model="recipe.directions">{{ recipe.directions }}</p><br>
+                <div>
+                    <a class="btn btn-primary btn-xs" ng-click="cancel()">Back</a>
+                    <button class="btn btn-danger btn-xs pull-right" ng-click="deleteRecipe()">Delete Recipe</button>
+                    <!--<button class="btn btn-primary btn-xs pull-right" ng-click="editRecipe()">Edit Recipe</button>-->
+                </div><br>
             </div>
         </div>
     </div>
 </div>
 
 
+
 <div class="row col-sm-offset-4">
-    <div class="col-sm-8 col-md-6 col-lg-4">
+    <div class="col-sm-8 col-md-6 col-lg-6">
         <div class="addcard">
             <div class="background">
                 <div class="form-group"><br>
                     <div class="cards col-sm-offset-1 col-sm-10">
-                        <h1 class="nested">Edit/Delete</h1>
+                        <h2 class="nested">Edit Recipe</h2>
                         <input id="recipe-name" class="form-control" placeholder="Name of your recipe" ng-model="recipe.name">
                     </div><br><br><br>
                     <div class="col-sm-offset-1 col-sm-10">
@@ -35,27 +36,24 @@
                         <textarea class="form-control" placeholder="Directions to make recipe" ng-model="recipe.directions"></textarea>
                     </div><br><br><br>
                     <div class="col-sm-offset-1 col-sm-10">
-                        <button class="btn btn-regular btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
+                        <button class="btn btn-success btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
                             <span class="glyphicon glyphicon-plus">Add</span></button>
                         <input id="ingredient-input" class="form-control" placeholder="Ingredients" ng-model="ingredientName">
                         <span class="nested" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}<br></span>
                     </div><br><br><br>
                     <div  class="col-sm-offset-1 col-sm-10">
-                        <button class="btn btn-regular btn-xs pull-right" ng-click="addTagToRecipe(tagName)">
+                        <button class="btn btn-success btn-xs pull-right" ng-click="addTagToRecipe(tagName)">
                             <span class="glyphicon glyphicon-plus"></span>Add</button>
                         <input id="tag-input" class="form-control col-md-6" placeholder="Tag for searching" ng-model="tagName">
                         <span class="nested" ng-repeat="tag in recipe.tags">{{ tag.name }} </span>
                     </div><br><br><br>
                     <div><br>
-                        <input class="col-sm-offset-1 col-sm-10" ng-model="photo" type="file" accept="image/*" onchange="angular.element(this).scope().uploadFile(this.files)"/>
-                    </div><br>
+                        <!--<input class="col-sm-offset-1 col-sm-10" ng-model="photo" type="file" accept="image/*" onchange="angular.element(this).scope().uploadFile(this.files)"/>-->
+                    </div><br>{{ recipe.photo.id }}
                     <div>
-                        <button class="btn btn-regular btn-xs" ng-click="addRecipe()">
-                            <span class="glyphicon glyphicon-cloud-upload"></span>Save</button>
-                        <button class="btn btn-danger btn-xs pull-right" ng-click="deleteRecipe()">
-                            <span class="glyphicon glyphicon-cloud-upload"></span>Delete</button>
-                        <button class="btn btn-regular btn-xs" ng-click="cancel()">
-                            <span class="glyphicon glyphicon-cloud-upload"></span>Cancel</button>
+                        <button class="btn btn-success btn-xs pull-left" ng-click="editRecipe()">Save</button>
+                        <button class="btn btn-danger btn-xs pull-right" ng-click="deleteRecipe()">Delete</button>
+                        <button class="btn btn-primary btn-xs" ng-click="cancel()">Back</button>
                     </div><br>
                 </div>
             </div>
