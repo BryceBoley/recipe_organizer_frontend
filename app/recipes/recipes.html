@@ -2,14 +2,11 @@
 <div class="recipe-card">
     <div class="recipe-pics">
         <div class="pic" ng-repeat="recipe in recipes | filter:query">
-        <img ng-src="{{convertImageUrl(recipe.photo)}}" class="pic-image" alt="Pic"/>
-        <span class="pic-caption rotate-in">
-            <!--<h2 class="pic-title">{{recipe.name}}</h2>-->
-            <a href="#/recipes/{{recipe.id}}">{{recipe.name}}</a>
-            <!--<h2>{{recipe.description}}</h2>-->
-            <!--<h2>{{recipe.directions}}</h2><br>-->
-        </span>
+            <img ng-src="{{convertImageUrl(recipe.photo)}}" style="width:330px;height:200px" class="pic-image" alt="Pic"/>
+            <span class="pic-caption rotate-in">
+                <a class="pic-title" href="#/recipes/{{recipe.id}}">{{recipe.name}}</a>
+                <h2>{{recipe.description}}</h2>
+            </span>
         </div>
     </div>
 </div>
-
