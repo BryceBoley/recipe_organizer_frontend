@@ -51,7 +51,7 @@ img .pic-image{
     background-image: url(img/lined_paper.png);
 }
 div .row {
-    padding-top: 125px;
+    padding: 0 0 40px 0;
 }
 .button-margin {
     margin: 0 25px;
@@ -75,5 +75,8 @@ div .row {
 
 .nested {
     color: #5d5d5d;
+}
+.navbar-brand {
+   width: 33%;
 }
 
