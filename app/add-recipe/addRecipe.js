@@ -46,14 +46,16 @@ angular.module('myApp.addRecipe', ['ngRoute'])
                 console.log('fd')
             });
 
-            Restangular.all('recipes').withHttpConfig({transformRequest: angular.identity})
-                .post(fd, {}, {'Content-Type': undefined}).then(function () {
+            Restangular.one('recipes/', $scope.recipeId).customPOST($scope.recipeId).then(function () {
+                        $location.path('/recipes');
+
                     alert('nice job');
-                    $location.path('/recipes');
-                    }).error(function (response) {
+                        $location.path('/recipes')
+
+                    .error(function (response) {
                         console.log('Error response: ' + response);
             })
-        };
+        })};
 
 
         ////Add a new recipe, alert the user when it's been created or when there was a problem.
