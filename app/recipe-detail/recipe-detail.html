@@ -10,7 +10,7 @@
                 <p class="nested col-sm-offset-1" ng-model="recipe.directions">{{ recipe.directions }}</p><br>
                 <div>
                     <a class="btn btn-primary btn-xs" ng-click="cancel()">Back</a>
-                    <button class="btn btn-danger btn-xs pull-right" ng-click="deleteRecipe()">Delete Recipe</button>
+                    <!--<button class="btn btn-danger btn-xs pull-right" ng-click="deleteRecipe()">Delete Recipe</button>-->
                     <!--<button class="btn btn-primary btn-xs pull-right" ng-click="editRecipe()">Edit Recipe</button>-->
                 </div><br>
             </div>
@@ -47,9 +47,9 @@
                         <input id="tag-input" class="form-control col-md-6" placeholder="Tag for searching" ng-model="tagName">
                         <span class="nested" ng-repeat="tag in recipe.tags">{{ tag.name }} </span>
                     </div><br><br><br>
-                    <div><br>
+                    <!--<div><br>-->
                         <!--<input class="col-sm-offset-1 col-sm-10" ng-model="photo" type="file" accept="image/*" onchange="angular.element(this).scope().uploadFile(this.files)"/>-->
-                    </div><br>{{ recipe.photo.id }}
+                    <!--</div><br>-->
                     <div>
                         <button class="btn btn-success btn-xs pull-left" ng-click="editRecipe()">Save</button>
                         <button class="btn btn-danger btn-xs pull-right" ng-click="deleteRecipe()">Delete</button>
