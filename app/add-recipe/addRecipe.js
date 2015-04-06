@@ -46,7 +46,12 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
         $scope.cancel = function () {
             $location.path('/recipes');
-        }
+        };
+
+        $scope.convertImageUrl = function (url) {
+            return url.replace(/http:.*media/, '/api/media');
+        };
+
     }]);
 
 
@@ -105,7 +110,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 //            console.log(fd);
 //
 //            $http.post('http://localhost:8002/recipes/', fd, {
-//                headers: {'Content-type': undefined },
+//                headers: {'Content-type': 'application/json'},
 //                transformRequest: angular.identity
 //
 //            }).success(function () {
