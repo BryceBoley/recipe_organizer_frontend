@@ -38,7 +38,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         $scope.addRecipe = function () {
             var boundary = "---------------------------7da24f2e50046";
             var fd = new FormData();
-            fd.append("photo", $scope.recipe.photo);
+            //fd.append("photo", $scope.recipe.photo);
             fd.append("name", $scope.recipe.name);
             fd.append("description", $scope.recipe.description);
             fd.append("directions", $scope.recipe.directions);
@@ -47,8 +47,8 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
             console.log(fd);
 
-            $http.post('/recipes/', fd, {
-                headers: {'Content-Type':'multipart/form-data;boundary'},
+            $http.post('/recipes', fd, {
+                headers: {'Content-Type': undefined },
                 transformRequest: angular.identity
 
             }).success(function () {

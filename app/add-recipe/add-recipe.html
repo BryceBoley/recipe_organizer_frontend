@@ -24,9 +24,9 @@
                         <span class="nested" ng-repeat="tag in recipe.tags">{{ tag.name }}<br></span>
                         <input id="tag-input" class="form-control col-md-6" placeholder="Tag for searching" ng-model="tagName">
                     </div><br><br><br>
-                    <div><br>
-                        <input ng-model="photo" type="file" accept="image/*" onchange="angular.element(this).scope().uploadFile(this.files)"/>
-                    </div><br>
+                    <!--<div><br>-->
+                        <!--<input ng-model="photo" type="file" accept="image/*" onchange="angular.element(this).scope().uploadFile(this.files)"/>-->
+                    <!--</div><br>-->
                     <div>
                         <button class="btn btn-success btn-xs" ng-click="addRecipe()">
                             <span class="glyphicon glyphicon-cloud-upload"></span>Save Recipe</button>
