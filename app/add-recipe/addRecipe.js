@@ -47,7 +47,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
             console.log(fd);
 
-            $http.post('http://localhost:8002/recipes/', fd, {
+            $http.post('/recipes', fd, {
                 headers: {'Content-type': undefined },
                 transformRequest: angular.identity
 
