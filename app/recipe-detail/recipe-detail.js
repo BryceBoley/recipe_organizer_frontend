@@ -13,7 +13,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
 
         $scope.recipeId = $routeParams.recipeId;
 
-        Restangular.one('recipes/', $scope.recipeId).customGET().then(function (data) {
+        Restangular.one('recipes', $scope.recipeId).customGET().then(function (data) {
             $scope.recipe = data;
         });
 
@@ -25,7 +25,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
             var confirmation = confirm('Are you sure you want to delete this recipe? This cannot be undone');
 
             if (confirmation) {
-                Restangular.one('recipes/', $scope.recipeId).customDELETE().then(function () {
+                Restangular.one('recipes', $scope.recipeId).customDELETE().then(function () {
                         $location.path('/recipes');
                     },
                     function () {
@@ -36,7 +36,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
 
         $scope.editRecipe = function () {
             var fd = new FormData();
-            //fd.append("photo", $scope.recipe.photo);
+            fd.append("photo", $scope.recipe.photo);
             fd.append("name", $scope.recipe.name);
             fd.append("description", $scope.recipe.description);
             fd.append("directions", $scope.recipe.directions);
@@ -44,7 +44,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
             fd.append("tags", $scope.recipe.tags);
 
             $http.put('/recipes/' + $scope.recipe.id, fd, {
-                headers: {'Content-type': 'multipart/form-data; boundary' },
+                headers: {'Content-type': undefined },
                 transformRequest: angular.identity
 
             }).success(function () {
