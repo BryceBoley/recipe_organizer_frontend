@@ -36,7 +36,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
         //Add a new recipe, alert the user when it's been created or when there was a problem.
         $scope.addRecipe = function () {
-            var boundary = "---------------------------7da24f2e50046";
+            //var boundary = "---------------------------7da24f2e50046";
             var fd = new FormData();
             //fd.append("photo", $scope.recipe.photo);
             fd.append("name", $scope.recipe.name);
@@ -47,7 +47,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
             console.log(fd);
 
-            $http.post('/recipes', fd, {
+            $http.post('/recipes/', fd, {
                 headers: {'Content-Type': undefined },
                 transformRequest: angular.identity
 
