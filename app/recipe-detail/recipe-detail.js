@@ -34,6 +34,22 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
             }
         };
 
+         // Add the ingredients to the recipe object we're building
+        $scope.addIngredientToRecipe = function(ingredientName) {
+            var ingredient = {name: ingredientName};
+            $scope.recipe.ingredients.push(ingredient);
+            $scope.ingredientName = '';
+
+        };
+
+        // Add the tags to the recipe object we're building
+        $scope.addTagToRecipe = function (tagName) {
+            var tag = {name: tagName};
+            $scope.recipe.tags.push(tag);
+            $scope.tagName = '';
+
+        };
+
         $scope.editRecipe = function () {
             var fd = new FormData();
             //fd.append("photo", $scope.recipe.photo);

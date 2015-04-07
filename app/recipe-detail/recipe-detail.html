@@ -1,7 +1,8 @@
 <div class="row col-sm-offset-4">
     <div class="col-sm-8 col-md-6 col-lg-6">
         <div class="thumbnail">
-            <img src="{{recipe.photo}}" class="img-responsive" alt="recipe.name">
+            <!--<img src="{{recipe.photo}}" class="img-responsive" alt="recipe.name">-->
+            <img ng-src="img/chicken.jpeg" style="width:330px;height:200px" alt="recipe pics"/>
             <div class="caption">
                 <h2 class="nested col-sm-offset-1">{{ recipe.name }}</h2>
                 <h4>Ingredients:</h4>
@@ -36,13 +37,13 @@
                         <textarea class="form-control" placeholder="Directions to make recipe" ng-model="recipe.directions"></textarea>
                     </div><br><br><br>
                     <div class="col-sm-offset-1 col-sm-10">
+                        <span class="nested" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}<br></span>
                         <button class="btn btn-success btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
                             <span class="glyphicon glyphicon-plus">Add</span></button>
                         <input id="ingredient-input" class="form-control" placeholder="Ingredients" ng-model="ingredientName">
-                        <span class="nested" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}<br></span>
                     </div><br><br><br>
                     <div>
-                        <!--<button class="btn btn-success btn-xs pull-left" ng-click="editRecipe()">Save</button>-->
+                        <button class="btn btn-success btn-xs pull-left" ng-click="editRecipe()">Save</button>
                         <button class="btn btn-danger btn-xs pull-right" ng-click="deleteRecipe()">Delete</button>
                         <button class="btn btn-primary btn-xs" ng-click="cancel()">Back</button>
                     </div><br>

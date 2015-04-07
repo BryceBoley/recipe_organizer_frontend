@@ -15,8 +15,8 @@
                     <div class="col-sm-offset-1 col-sm-10">
                         <button class="btn btn-success btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
                             <span class="glyphicon glyphicon-plus">Add</span></button>
-                        <span class="nested" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}<br></span>
                         <input id="ingredient-input" class="form-control" placeholder="Ingredients" ng-model="ingredientName">
+                        <span class="nested" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}<br></span>
                     </div><br><br><br>
                     <div  class="col-sm-offset-1 col-sm-10">
                         <button class="btn btn-success btn-xs pull-right" ng-click="addTagToRecipe(tagName)">
