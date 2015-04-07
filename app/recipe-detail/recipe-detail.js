@@ -17,10 +17,6 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
             $scope.recipe = data;
         });
 
-        $scope.convertImageUrl = function (url) {
-            return url.replace(/http:.*media/, '/api/media');
-        };
-
         $scope.deleteRecipe = function () {
             var confirmation = confirm('Are you sure you want to delete this recipe? This cannot be undone');
 
