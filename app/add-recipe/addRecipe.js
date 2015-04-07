@@ -73,7 +73,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         };
 
         $scope.convertImageUrl = function (url) {
-            return url.replace(/http:.*media/, '/api/media/');
+            return url.replace(/http:.*media/, '/api/media');
         };
 
         $scope.cancel = function () {
