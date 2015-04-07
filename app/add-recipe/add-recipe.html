@@ -13,15 +13,15 @@
                         <textarea class="form-control" placeholder="Directions to make recipe" ng-model="recipe.directions"></textarea>
                     </div><br><br><br>
                     <div class="col-sm-offset-1 col-sm-10">
-                        <span class="nested" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}<br></span>
                         <button class="btn btn-success btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
-                            <span class="glyphicon glyphicon-plus">Add</span></button>
+                        <span class="nested" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}<br></span>
+                        <span class="glyphicon glyphicon-plus">Add</span></button>
                         <input id="ingredient-input" class="form-control" placeholder="Ingredients" ng-model="ingredientName">
                     </div><br><br><br>
                     <div  class="col-sm-offset-1 col-sm-10">
                         <button class="btn btn-success btn-xs pull-right" ng-click="addTagToRecipe(tagName)">
+                            <span class="nested" ng-repeat="tag in recipe.tags">{{ tag.name }}<br></span>
                             <span class="glyphicon glyphicon-plus"></span>Add</button>
-                        <span class="nested" ng-repeat="tag in recipe.tags">{{ tag.name }}<br></span>
                         <input id="tag-input" class="form-control col-md-6" placeholder="Tag for searching" ng-model="tagName">
                     </div><br>
                     <!--<div><br>-->
