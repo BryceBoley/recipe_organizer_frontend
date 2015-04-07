@@ -36,6 +36,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
         $scope.addRecipe = function () {
             Restangular.all('add-recipe').customPOST($scope.recipe).then(function () {
+                    alert("Your recipe was successfully created");
                     $location.path('/recipes');
                 },
                 function () {
@@ -71,13 +72,13 @@ angular.module('myApp.addRecipe', ['ngRoute'])
             console.log($scope.recipe.photo);
         };
 
-        $scope.convertImageUrl = function (url) {
-            if (url !== null) {
-                return url.replace(/http:.*media/, '/api/media')
-            } else {
-                return url('/img.chicken.jpeg')
-            }
-        };
+        //$scope.convertImageUrl = function (url) {
+        //    if (url !== null) {
+        //        return url.replace(/http:.*media/, '/api/media')
+        //    } else {
+        //        return url('/img.chicken.jpeg')
+        //    }
+        //};
 
         $scope.cancel = function () {
              $location.path('/recipes');
