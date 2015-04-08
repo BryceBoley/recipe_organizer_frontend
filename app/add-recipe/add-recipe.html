@@ -3,6 +3,7 @@
         <div class="addcard">
             <div class="background">
                 <div class="form-group"><br>
+                    <h3>Add Recipe</h3>
                     <div class="cards col-sm-offset-1 col-sm-10">
                         <input id="recipe-name" class="form-control" placeholder="Name of your recipe" ng-model="recipe.name">
                     </div><br><br><br>
@@ -25,7 +26,7 @@
                         <input id="tag-input" class="form-control col-md-6" placeholder="Tag for searching" ng-model="tagName">
                     </div><br><br>
                     <div><br>
-                        <input class='btn' type="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+                        <input class='btn-color' type="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
                     </div><br>
                     <div>
                         <button class="btn btn-success btn-md pull-right" ng-click="cancel()">

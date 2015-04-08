@@ -99,3 +99,6 @@ button {
 . clickme {
     font-size: 30px;
 }
+.btn-color {
+    color: #767676;
+}
