@@ -102,6 +102,7 @@ button {
 .btn-color {
     color: #767676;
 }
-.addCaption {
-    margin-right: 50px;
+.add-caption {
+    margin-left: 10px;
+    color: #767676;
 }
