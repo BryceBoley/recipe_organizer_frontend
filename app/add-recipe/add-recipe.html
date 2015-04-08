@@ -1,4 +1,4 @@
-<div class="row col-sm-offset-4">
+<div class="row col-sm-offset-3 row col-md-offset-3 row col-lg-offset-3">
     <div class="col-sm-12 col-md-10 col-lg-8">
         <div class="addcard">
             <div class="background">
@@ -25,7 +25,7 @@
                         <button class="btn btn-success btn-xs pull-right" ng-click="addTagToRecipe(tagName)">
                             <span class="glyphicon glyphicon-plus"></span>Add</button>
                         <span class="nested" ng-repeat="tag in recipe.tags">{{ tag.name }}<br></span>
-                        <input id="tag-input" class="form-control col-md-6" placeholder="Tag for searching" ng-model="tagName">
+                        <input id="tag-input" class="form-control col-md-6" placeholder="Write a review" ng-model="tagName">
                     </div><br><br>
                     <div><br>
                         <input class='btn-color' type="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
