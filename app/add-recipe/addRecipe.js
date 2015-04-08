@@ -117,7 +117,8 @@ angular.module('myApp.addRecipe', ['ngRoute'])
                 $location.path('/recipes');
             }).error(function (response) {
                 console.log('Error response: ' + response);
-            })};
+            })
+        };
 
         $scope.uploadFile = function (files) {
             $scope.recipe.photo = files[0];

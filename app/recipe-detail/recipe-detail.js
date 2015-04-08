@@ -34,20 +34,20 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
         };
 
         //Add the ingredients to the recipe object we're building
-        $scope.addIngredientToRecipe = function(ingredientName) {
-            var ingredient = {name: ingredientName};
-            $scope.recipe.ingredients.push(ingredient);
-            $scope.ingredientName = '';
-
-        };
+        //$scope.addIngredientToRecipe = function(ingredientName) {
+        //    var ingredient = {name: ingredientName};
+        //    $scope.recipe.ingredients.push(ingredient);
+        //    $scope.ingredientName = '';
+        //
+        //};
 
         // Add the tags to the recipe object we're building
-        $scope.addTagToRecipe = function (tagName) {
-            var tag = {name: tagName};
-            $scope.recipe.tags.push(tag);
-            $scope.tagName = '';
-
-        };
+        //$scope.addTagToRecipe = function (tagName) {
+        //    var tag = {name: tagName};
+        //    $scope.recipe.tags.push(tag);
+        //    $scope.tagName = '';
+        //
+        //};
 
 
         $scope.editRecipe = function () {
@@ -55,6 +55,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
             fd.append("photo", $scope.recipe.photo);
             fd.append("name", $scope.recipe.name);
             fd.append("description", $scope.recipe.description);
+            fd.append("directions", $scope.recipe.directions);
             fd.append("ingredients", $scope.recipe.ingredients);
             fd.append("tags", $scope.recipe.tags);
 
@@ -62,18 +63,19 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
                     headers: {'Content-type': undefined },
                     transformRequest: angular.identity
 
-                }).success(function () {
-                    $location.path('/recipes');
-                }).error(function (response) {
-                    console.log('Error response: ' + response);
-                })};
+            }).success(function () {
+                $location.path('/recipes');
+            }).error(function (response) {
+                console.log('Error response: ' + response);
+            })};
 
-
-
+            $scope.uploadFile = function (files) {
+                $scope.recipe.photo = files[0];
+                console.log($scope.recipe.photo);
+            };
 
         $scope.cancel = function () {
             $location.path('/recipes');
-
 
         };
 
