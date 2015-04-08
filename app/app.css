@@ -79,7 +79,7 @@ div .row {
    width: 33%;
 }
 h2 {
-    font-size: 20px;
+    font-size: 40px;
 }
 h4 {
     font-size: 18px;
@@ -91,6 +91,6 @@ button {
     background-image: url(img/lined_paper.png);
 }
 .img-responsive {
-    width:inherit;
+    width: 100%;
 }
 
