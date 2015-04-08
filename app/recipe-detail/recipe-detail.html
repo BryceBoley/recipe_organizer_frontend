@@ -1,17 +1,18 @@
 <div class="row col-sm-offset-4">
-    <div class="col-sm-8 col-md-6 col-lg-6">
+    <div class="col-sm-12 col-md-10 col-lg-8">
         <div class="thumbnail">
-            <img ng-src="{{convertImageUrl(recipe.photo)}}" style="width:330px;height:200px" class="pic-image" alt="Recipe Picture">
+            <img ng-src="{{convertImageUrl(recipe.photo)}}" class="img-responsive" alt="Recipe Picture">
             <!--<img ng-src="img/chicken.jpeg" style="width:330px;height:200px" alt="recipe pics"/>-->
             <div class="caption">
+                <p class="nested col-sm-offset-1" ng-model="recipe.description">{{ recipe.description }}</p><br>
                 <h2 class="nested col-sm-offset-1">{{ recipe.name }}</h2>
                 <h4>Ingredients:</h4>
                 <p class="nested col-sm-offset-1" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</p>
                 <h4>Directions:</h4>
                 <p class="nested col-sm-offset-1" ng-model="recipe.directions">{{ recipe.directions }}</p><br>
                 <div>
-                    <a class="btn btn-primary btn-xs" ng-click="cancel()">Back</a>
-                    <!--<button class="btn btn-danger btn-xs pull-right" ng-click="deleteRecipe()">Delete Recipe</button>-->
+                    <a class="btn btn-primary btn-lg" ng-click="cancel()">Back</a>
+                    <button class="btn btn-danger btn-lg pull-right" ng-click="deleteRecipe()">Delete Recipe</button>
                     <!--<button class="btn btn-primary btn-xs pull-right" ng-click="editRecipe()">Edit Recipe</button>-->
                 </div><br>
             </div>
@@ -21,34 +22,34 @@
 
 
 
-<div class="row col-sm-offset-4">
-    <div class="col-sm-8 col-md-6 col-lg-6">
-        <div class="addcard">
-            <div class="background">
-                <div class="form-group"><br>
-                    <div class="cards col-sm-offset-1 col-sm-10">
-                        <h2 class="nested">Delete Recipe</h2>
-                        <input id="recipe-name" class="form-control" placeholder="Name of your recipe" ng-model="recipe.name">
-                    </div><br><br><br>
-                    <div class="col-sm-offset-1 col-sm-10">
-                        <textarea class="form-control" placeholder="Description of recipe" ng-model="recipe.description"></textarea>
-                    </div><br><br><br><br>
-                    <div class="col-sm-offset-1 col-sm-10">
-                        <textarea class="form-control" placeholder="Directions to make recipe" ng-model="recipe.directions"></textarea>
-                    </div><br><br><br>
-                    <div class="col-sm-offset-1 col-sm-10">
-                        <span class="nested" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}<br></span>
-                        <button class="btn btn-success btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
-                            <span class="glyphicon glyphicon-plus">Add</span></button>
-                        <input id="ingredient-input" class="form-control" placeholder="Ingredients" ng-model="ingredientName">
-                    </div><br><br><br>
-                    <div>
-                        <!--<button class="btn btn-success btn-xs pull-left" ng-click="editRecipe()">Save</button>-->
-                        <button class="btn btn-danger btn-xs pull-right" ng-click="deleteRecipe()">Delete</button>
-                        <button class="btn btn-primary btn-xs" ng-click="cancel()">Back</button>
-                    </div><br>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="row col-sm-offset-4">-->
+    <!--<div class="col-sm-8 col-md-6 col-lg-6">-->
+        <!--<div class="addcard">-->
+            <!--<div class="background">-->
+                <!--<div class="form-group"><br>-->
+                    <!--<div class="cards col-sm-offset-1 col-sm-10">-->
+                        <!--<h2 class="nested">Delete Recipe</h2>-->
+                        <!--<input id="recipe-name" class="form-control" placeholder="Name of your recipe" ng-model="recipe.name">-->
+                    <!--</div><br><br><br>-->
+                    <!--<div class="col-sm-offset-1 col-sm-10">-->
+                        <!--<textarea class="form-control" placeholder="Description of recipe" ng-model="recipe.description"></textarea>-->
+                    <!--</div><br><br><br><br>-->
+                    <!--<div class="col-sm-offset-1 col-sm-10">-->
+                        <!--<textarea class="form-control" placeholder="Directions to make recipe" ng-model="recipe.directions"></textarea>-->
+                    <!--</div><br><br><br>-->
+                    <!--<div class="col-sm-offset-1 col-sm-10">-->
+                        <!--<span class="nested" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}<br></span>-->
+                        <!--<button class="btn btn-success btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">-->
+                            <!--<span class="glyphicon glyphicon-plus">Add</span></button>-->
+                        <!--<input id="ingredient-input" class="form-control" placeholder="Ingredients" ng-model="ingredientName">-->
+                    <!--</div><br><br><br>-->
+                    <!--<div>-->
+                        <!--&lt;!&ndash;<button class="btn btn-success btn-xs pull-left" ng-click="editRecipe()">Save</button>&ndash;&gt;-->
+                        <!--<button class="btn btn-danger btn-xs pull-right" ng-click="deleteRecipe()">Delete</button>-->
+                        <!--<button class="btn btn-primary btn-xs" ng-click="cancel()">Back</button>-->
+                    <!--</div><br>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

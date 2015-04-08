@@ -1,5 +1,5 @@
 <div class="row col-sm-offset-4">
-    <div class="col-sm-8 col-md-6 col-lg-4">
+    <div class="col-sm-12 col-md-10 col-lg-8">
         <div class="addcard">
             <div class="background">
                 <div class="form-group"><br>
@@ -7,32 +7,32 @@
                         <input id="recipe-name" class="form-control" placeholder="Name of your recipe" ng-model="recipe.name">
                     </div><br><br><br>
                     <div class="col-sm-offset-1 col-sm-10">
-                        <textarea class="form-control" placeholder="Description of recipe" ng-model="recipe.description"></textarea>
+                        <textarea class="form-control" placeholder="Description of the recipe" ng-model="recipe.description"></textarea>
                     </div><br><br><br><br>
                     <div class="col-sm-offset-1 col-sm-10">
-                        <textarea class="form-control" placeholder="Directions to make recipe" ng-model="recipe.directions"></textarea>
+                        <textarea class="form-control" placeholder="Directions to make the recipe" ng-model="recipe.directions"></textarea>
                     </div><br><br><br>
                     <div class="col-sm-offset-1 col-sm-10">
-                        <span class="nested" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}<br></span>
                         <button class="btn btn-success btn-xs pull-right" ng-click="addIngredientToRecipe(ingredientName)">
                             <span class="glyphicon glyphicon-plus">Add</span></button>
+                        <span class="nested" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}<br></span>
                         <input id="ingredient-input" class="form-control" placeholder="Ingredients" ng-model="ingredientName">
                     </div><br><br><br>
                     <div  class="col-sm-offset-1 col-sm-10">
-                        <span class="nested" ng-repeat="tag in recipe.tags">{{ tag.name }}<br></span>
                         <button class="btn btn-success btn-xs pull-right" ng-click="addTagToRecipe(tagName)">
                             <span class="glyphicon glyphicon-plus"></span>Add</button>
+                        <span class="nested" ng-repeat="tag in recipe.tags">{{ tag.name }}<br></span>
                         <input id="tag-input" class="form-control col-md-6" placeholder="Tag for searching" ng-model="tagName">
-                    </div><br>
+                    </div><br><br>
                     <div><br>
-                        <input type="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+                        <input class='btn' type="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
                     </div><br>
-                    <div><br>
+                    <div>
                         <button class="btn btn-success btn-xs" ng-click="addRecipe()">
                             <span class="glyphicon glyphicon-cloud-upload"></span>Save Recipe</button>
                         <button class="btn btn-primary btn-xs pull-right" ng-click="cancel()">
-                            <span class="glyphicon glyphicon-cloud-upload"></span>Back</button><br>
-                    </div>
+                            <span class="glyphicon glyphicon-cloud-upload"></span>Back</button>
+                    </div><br>
                 </div>
             </div>
         </div>
