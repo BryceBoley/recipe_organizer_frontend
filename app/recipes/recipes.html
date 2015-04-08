@@ -4,9 +4,9 @@
         <div class="pic" ng-repeat="recipe in recipes | filter:query">
             <img ng-src="{{(recipe.photo)}}" style="width:330px;height:200px" class="pic-image" alt="Pic"/>
             <span class="pic-caption rotate-in">
-                <a href="#/recipes/{{recipe.id}}">Click Me!!!</a>
-                <p class="pic-title">{{recipe.name}}</p>
-                <h2>{{recipe.description}}</h2>
+                <a class="clickme" href="#/recipes/{{recipe.id}}">Click Me!!!</a>
+                <h2 class="pic-name"><br>{{recipe.name}}</h2>
+                <h4><br>{{recipe.description}}</h4>
             </span>
         </div>
     </div>
