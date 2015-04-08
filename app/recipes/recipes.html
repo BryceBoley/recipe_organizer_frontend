@@ -2,7 +2,7 @@
 <div class="recipe-card">
     <div class="recipe-pics">
         <div class="pic" ng-repeat="recipe in recipes | filter:query">
-            <!--<img ng-src="img/chicken.jpeg" style="width:330px;height:200px" class="pic-image" alt="pics"/>-->
+            <img ng-src="img/chicken.jpeg" style="width:330px;height:200px" class="pic-image" alt="pics"/>
             <img ng-src="{{convertImageUrl(recipe.photo)}}" style="width:330px;height:200px" class="pic-image" alt="Recipe Picture"/>
             <span class="pic-caption rotate-in">
                 <a href="#/recipes/{{recipe.id}}">Click Me!!!</a>
