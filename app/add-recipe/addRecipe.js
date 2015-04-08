@@ -57,7 +57,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
             console.log(fd);
 
-            $http.post('/recipes', fd, {
+            $http.post('/api/recipes', fd, {
                 headers: {'Content-Type': undefined },
                 transformRequest: angular.identity
 
