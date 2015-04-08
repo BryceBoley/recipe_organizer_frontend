@@ -34,15 +34,6 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
         };
 
-        //$scope.addRecipe = function () {
-        //    Restangular.all('add-recipe').customPOST($scope.recipe).then(function () {
-        //            alert("Your recipe was successfully created");
-        //            $location.path('/recipes');
-        //        },
-        //        function () {
-        //            alert("There was a problem creating your event. Please try again.")
-        //        })
-        //};
 
         //Add a new recipe, alert the user when it's been created or when there was a problem.
         $scope.addRecipe = function () {
@@ -65,7 +56,8 @@ angular.module('myApp.addRecipe', ['ngRoute'])
                 $location.path('/recipes');
             }).error(function (response) {
                 console.log('Error response: ' + response);
-            })};
+            })
+        };
 
         $scope.uploadFile = function (files) {
             $scope.recipe.photo = files[0];
